@@ -1,23 +1,21 @@
-import './App.css';
+import {
+    Route,
+    RouterProvider,
+    createBrowserRouter,
+    createRoutesFromElements,
+} from 'react-router-dom';
 
-function App() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
-    );
-}
+import { Homepage } from './Pages/Homepage';
+import { Root } from './Pages/Root';
+
+const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route element={<Root />}>
+            <Route path="/" element={<Homepage />} />
+        </Route>,
+    ),
+);
+
+const App = () => <RouterProvider router={router} />;
 
 export default App;
