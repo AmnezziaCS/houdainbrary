@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { OPEN_LIBRARY_URL_PREFIX } from '../utils/utils';
 import styles from './homepage.module.css';
 
 type Change = {
@@ -20,7 +21,7 @@ export const Homepage = () => {
     const fetchRecentChanges = async () => {
         try {
             const response = await fetch(
-                'https://openlibrary.org/recentchanges.json?limit=5&bot=false',
+                `${OPEN_LIBRARY_URL_PREFIX}/recentchanges.json?limit=5&bot=false`,
             );
             if (!response.ok) {
                 throw new Error('Failed to fetch recent changes');

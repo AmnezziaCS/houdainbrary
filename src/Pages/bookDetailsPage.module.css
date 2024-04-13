@@ -1,0 +1,50 @@
+.bookDetailPage {
+    padding: 20px;
+}
+
+.bookDetailPage h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.bookDetailPage img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.bookDetailPage p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.bookDetailPage .wikipediaInfo {
+    margin-top: 40px;
+}
+
+.bookDetailPage .wikipediaInfo h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.bookDetailPage .wikipediaInfo p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.bookDetailPage .wikipediaInfo img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.bookDetailPage .wikipediaInfo a {
+    display: block;
+    font-size: 1.1rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.bookDetailPage .wikipediaInfo a:hover {
+    text-decoration: underline;
+}
