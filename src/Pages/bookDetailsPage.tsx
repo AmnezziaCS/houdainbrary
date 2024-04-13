@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { OPEN_LIBRARY_URL_PREFIX } from '../utils/utils';
+import {
+    OPEN_LIBRARY_COVER_URL_PREFIX,
+    OPEN_LIBRARY_URL_PREFIX,
+} from '../utils/utils';
 import styles from './bookDetailsPage.module.css';
 
 type BookDetails = {
@@ -45,23 +48,22 @@ const BookDetailPage = () => {
         }
     };
 
-    console.log(bookDetails);
-
-    if (!bookDetails) {
+    if (bookDetails?.title === '') {
         return <div>Loading...</div>;
     }
 
     return (
-        <div className={styles?.bookDetailPage}>
-            <h2>{bookDetails?.title}</h2>
-            <img
-                src={`https://covers.openlibrary.org/b/id/${bookDetails?.cover_i}-M.jpg`}
-                alt="Book Cover"
-            />
-            <p>Location: {bookDetails?.publish_place[0]}</p>
-            <p>Date: {bookDetails?.publish_date[0]}</p>
-            <p>Author: {bookDetails?.author_name}</p>
-            {/* <div className={styles.wikipediaInfo}>
+        (bookDetails && (
+            <div className={styles?.bookDetailPage}>
+                <h2>{bookDetails?.title}</h2>
+                <img
+                    src={`${OPEN_LIBRARY_COVER_URL_PREFIX}/b/id/${bookDetails?.cover_i}-M.jpg`}
+                    alt="Book Cover"
+                />
+                <p>Location: {bookDetails?.publish_place[0]}</p>
+                <p>Date: {bookDetails?.publish_date[0]}</p>
+                <p>Author: {bookDetails?.author_name}</p>
+                {/* <div className={styles.wikipediaInfo}>
                 <h3>Wikipedia Information</h3>
                 <p>{wikipediaInfo.description}</p>
                 <img
@@ -76,7 +78,8 @@ const BookDetailPage = () => {
                     Read more on Wikipedia
                 </a>
             </div> */}
-        </div>
+            </div>
+        )) || <div className={styles.bookNotFound}>Book not found</div>
     );
 };
 

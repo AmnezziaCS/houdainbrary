@@ -6,7 +6,13 @@ import { Header } from './header';
 test('should render header with navigation links', () => {
     render(
         <BrowserRouter>
-            <Header />
+            <Header
+                showSearchResults={{
+                    isQuerying: false,
+                    isLoading: false,
+                }}
+                setShowSearchResults={() => {}}
+            />
         </BrowserRouter>,
     );
 
@@ -16,9 +22,9 @@ test('should render header with navigation links', () => {
     const homepageLink = screen.getByText(/Homepage/i);
     expect(homepageLink).toBeInTheDocument();
 
-    const booksLink = screen.getByText(/Books/i);
-    expect(booksLink).toBeInTheDocument();
+    const advancedSearchLink = screen.getByText(/Advanced Search/i);
+    expect(advancedSearchLink).toBeInTheDocument();
 
-    const authorsLink = screen.getByText(/Authors/i);
-    expect(authorsLink).toBeInTheDocument();
+    const settingsLink = screen.getByText(/Settings/i);
+    expect(settingsLink).toBeInTheDocument();
 });

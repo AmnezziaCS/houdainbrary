@@ -3,18 +3,24 @@
     color: white;
     padding: 20px;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
     font-size: 2rem;
     margin-bottom: 10px;
+    margin-top: 0;
 }
 
 .navList {
     list-style-type: none;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
 }
 
 .navItem {
@@ -31,4 +37,76 @@
 
 .navLink:hover {
     background-color: #4a4e59;
+}
+
+.searchContainer {
+    position: relative;
+}
+
+.searchInput {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.searchResults {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 200px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+}
+
+.searchResults.active {
+    display: block;
+}
+
+.searchResult {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.searchResult:hover {
+    background-color: #f0f0f0;
+}
+
+.searchButton {
+    padding: 8px 12px;
+    background-color: #847e89;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.searchButton:hover {
+    background-color: #726a75;
+}
+
+.searchResultNoMatches {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.searchResultLoading {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
 }

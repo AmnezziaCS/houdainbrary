@@ -12,13 +12,6 @@ cd houdainbrary
 npm install
 ```
 
-Then, you need to create a `.env` file in the root of the project and add the following environment variables:
-
-```env
-REACT_APP_OPENLIBRARY_API_URL=https://openlibrary.org
-REACT_APP_WIKIPEDIA_API_URL=https://en.wikipedia.org/w/api.php
-```
-
 After that, you can run the application using the following command:
 
 ```bash
@@ -46,6 +39,10 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run test`
+
+Launches the test runner in the interactive watch mode.
 
 ## Documentation
 

@@ -1,13 +1,35 @@
-import { Fragment } from 'react';
+import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { Header } from '../Components/header';
 
+export type ShowSearchResultsObj = {
+    isQuerying: boolean;
+    isLoading: boolean;
+};
+
 export const Root = () => {
+    const [showSearchResults, setShowSearchResults] =
+        useState<ShowSearchResultsObj>({
+            isQuerying: false,
+            isLoading: false,
+        });
+
     return (
-        <Fragment>
-            <Header />
+        <div
+            onClick={(event: React.MouseEvent<HTMLDivElement>) => {
+                setShowSearchResults({
+                    isQuerying: false,
+                    isLoading: false,
+                });
+                event.stopPropagation();
+            }}
+        >
+            <Header
+                showSearchResults={showSearchResults}
+                setShowSearchResults={setShowSearchResults}
+            />
             <Outlet />
-        </Fragment>
+        </div>
     );
 };
