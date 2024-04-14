@@ -50,7 +50,9 @@ export const Header = ({
             )
                 .then((response) => response.json())
                 .then((data) => {
-                    setSearchResults(data.docs);
+                    setSearchResults(
+                        data.docs.filter((doc: SearchResult) => doc.isbn),
+                    );
                     setShowSearchResults({
                         isQuerying: true,
                         isLoading: false,
