@@ -51,7 +51,9 @@ export const Header = ({
                 .then((response) => response.json())
                 .then((data) => {
                     setSearchResults(
-                        data.docs.filter((doc: SearchResult) => doc.isbn),
+                        data.docs.filter(
+                            (doc: SearchResult) => doc.isbn && doc.title,
+                        ),
                     );
                     setShowSearchResults({
                         isQuerying: true,

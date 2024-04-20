@@ -11,7 +11,7 @@ type BookDetails = {
     title: string;
     author_name: string;
     cover_i: number;
-    publish_date: string[];
+    first_publish_year: number;
     publish_place: string[];
 };
 
@@ -22,7 +22,7 @@ const BookDetailPage = () => {
         title: '',
         author_name: '',
         cover_i: 0,
-        publish_date: [],
+        first_publish_year: 0,
         publish_place: [],
     });
     // const [wikipediaInfo, setWikipediaInfo] = useState<any>(null);
@@ -35,7 +35,7 @@ const BookDetailPage = () => {
     const fetchBookDetails = async (bookId: string | undefined) => {
         try {
             const response = await fetch(
-                `${OPEN_LIBRARY_URL_PREFIX}/search.json?q=isbn:${bookId}&fields=title,author_name,cover_i,publish_date,edition_key,publish_place`,
+                `${OPEN_LIBRARY_URL_PREFIX}/search.json?q=isbn:${bookId}&fields=title,author_name,cover_i,first_publish_year,edition_key,publish_place`,
             );
             if (!response.ok) {
                 throw new Error('Failed to fetch book details');
@@ -60,9 +60,14 @@ const BookDetailPage = () => {
                     src={`${OPEN_LIBRARY_COVER_URL_PREFIX}/b/id/${bookDetails?.cover_i}-M.jpg`}
                     alt="Book Cover"
                 />
-                <p>Location: {bookDetails?.publish_place[0]}</p>
-                <p>Date: {bookDetails?.publish_date[0]}</p>
-                <p>Author: {bookDetails?.author_name}</p>
+                <p>
+                    Location:{' '}
+                    {bookDetails?.publish_place
+                        ? bookDetails?.publish_place[0]
+                        : 'Unknown'}
+                </p>
+                <p>Date: {bookDetails?.first_publish_year ?? 'Unknown'}</p>
+                <p>Author: {bookDetails.author_name ?? 'Unknown'}</p>
                 {/* <div className={styles.wikipediaInfo}>
                 <h3>Wikipedia Information</h3>
                 <p>{wikipediaInfo.description}</p>
