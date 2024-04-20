@@ -8,11 +8,13 @@ import {
 import BookDetailPage from './Pages/bookDetailsPage';
 import { Homepage } from './Pages/homepage';
 import { Root } from './Pages/root';
+import { Search } from './Pages/search';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route element={<Root />}>
             <Route path="/" element={<Homepage />} />
+            <Route path="/search" element={<Search />} />
             <Route path="/books/:bookId" element={<BookDetailPage />} />
         </Route>,
     ),

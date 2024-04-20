@@ -1,14 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ShowSearchResultsObj } from '../Pages/root';
+import { SearchResult, ShowSearchResultsObj } from '../utils/types';
 import { OPEN_LIBRARY_URL_PREFIX } from '../utils/utils';
 import styles from './header.module.css';
-
-type SearchResult = {
-    title: string;
-    isbn: string[];
-};
 
 export const Header = ({
     showSearchResults,

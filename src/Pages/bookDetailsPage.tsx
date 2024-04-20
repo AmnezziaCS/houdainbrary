@@ -1,19 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import { BookDetails } from '../utils/types';
 import {
     OPEN_LIBRARY_COVER_URL_PREFIX,
     OPEN_LIBRARY_URL_PREFIX,
 } from '../utils/utils';
 import styles from './bookDetailsPage.module.css';
-
-type BookDetails = {
-    title: string;
-    author_name: string;
-    cover_i: number;
-    first_publish_year: number;
-    publish_place: string[];
-};
 
 const BookDetailPage = () => {
     const { bookId } = useParams();

@@ -2,11 +2,7 @@ import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { Header } from '../Components/header';
-
-export type ShowSearchResultsObj = {
-    isQuerying: boolean;
-    isLoading: boolean;
-};
+import { ShowSearchResultsObj } from '../utils/types';
 
 export const Root = () => {
     const [showSearchResults, setShowSearchResults] =
