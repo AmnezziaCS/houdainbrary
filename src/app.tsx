@@ -5,7 +5,7 @@ import {
     createRoutesFromElements,
 } from 'react-router-dom';
 
-import BookDetailPage from './pages/bookDetailsPage';
+import { BookDetailsPage } from './pages/bookDetailsPage';
 import { HomePage } from './pages/homePage';
 import { Root } from './pages/root';
 import { SearchPage } from './pages/searchPage';
@@ -17,7 +17,7 @@ const router = createBrowserRouter(
             <Route path="/" element={<HomePage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/secret" element={<SecretPage />} />
-            <Route path="/books/:bookId" element={<BookDetailPage />} />
+            <Route path="/books/:bookId" element={<BookDetailsPage />} />
         </Route>,
     ),
 );

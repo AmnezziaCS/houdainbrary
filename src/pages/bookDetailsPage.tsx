@@ -20,7 +20,7 @@ const extractCountryFromWikipediaRevision = (revision: string | null) => {
     return match ? match[1].trim() : null;
 };
 
-const BookDetailPage = () => {
+export const BookDetailsPage = () => {
     const { bookId } = useParams();
 
     const [bookDetails, setBookDetails] =
@@ -137,5 +137,3 @@ const BookDetailPage = () => {
         )) || <div className={styles.bookNotFound}>Book not found</div>
     );
 };
-
-export default BookDetailPage;

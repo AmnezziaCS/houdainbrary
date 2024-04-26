@@ -25,6 +25,6 @@ test('should render header with navigation links', () => {
     const advancedSearchLink = screen.getByText(/Advanced Search/i);
     expect(advancedSearchLink).toBeInTheDocument();
 
-    const settingsLink = screen.getByText(/Settings/i);
+    const settingsLink = screen.getByText(/Secret/i);
     expect(settingsLink).toBeInTheDocument();
 });
