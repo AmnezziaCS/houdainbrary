@@ -77,8 +77,8 @@ export const Header = ({
                         </Link>
                     </li>
                     <li className={styles.navItem}>
-                        <Link to="/settings" className={styles.navLink}>
-                            Settings
+                        <Link to="/secret" className={styles.navLink}>
+                            Secret
                         </Link>
                     </li>
                 </ul>

@@ -9,12 +9,14 @@ import BookDetailPage from './pages/bookDetailsPage';
 import { HomePage } from './pages/homePage';
 import { Root } from './pages/root';
 import { SearchPage } from './pages/searchPage';
+import { SecretPage } from './pages/secretPage';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route element={<Root />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/search" element={<SearchPage />} />
+            <Route path="/secret" element={<SecretPage />} />
             <Route path="/books/:bookId" element={<BookDetailPage />} />
         </Route>,
     ),
