@@ -5,10 +5,10 @@ import {
     createRoutesFromElements,
 } from 'react-router-dom';
 
-import BookDetailPage from './pages1/bookDetailsPage';
-import { HomePage } from './pages1/homePage';
-import { Root } from './pages1/root';
-import { SearchPage } from './pages1/searchPage';
+import BookDetailPage from './pages/bookDetailsPage';
+import { HomePage } from './pages/homePage';
+import { Root } from './pages/root';
+import { SearchPage } from './pages/searchPage';
 
 const router = createBrowserRouter(
     createRoutesFromElements(

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { Header } from '../components1/header';
+import { Header } from '../components/header';
 import { ShowSearchResultsObj } from '../utils/types';
 
 export const Root = () => {
