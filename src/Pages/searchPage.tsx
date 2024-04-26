@@ -4,7 +4,7 @@ import Select from 'react-select';
 
 import { SearchResult } from '../utils/types';
 import { OPEN_LIBRARY_URL_PREFIX } from '../utils/utils';
-import styles from './search.module.css';
+import styles from './searchPage.module.css';
 
 const SearchResultLink = ({ result }: { result: SearchResult }) => (
     <Link to={`/books/${result.isbn[0]}`} className={styles.searchResult}>
@@ -12,7 +12,7 @@ const SearchResultLink = ({ result }: { result: SearchResult }) => (
     </Link>
 );
 
-export const Search = () => {
+export const SearchPage = () => {
     const [searchParams, setSearchParams] = useState({
         title: '',
         author: '',

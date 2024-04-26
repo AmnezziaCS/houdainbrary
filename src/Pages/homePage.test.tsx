@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { Homepage } from './homepage';
+import { HomePage } from './homePage';
 
 beforeEach(() => {
     jest.spyOn(global, 'fetch').mockResolvedValue({
@@ -21,9 +21,9 @@ beforeEach(() => {
 });
 
 test('should render homepage', async () => {
-    render(<Homepage />);
-    const homepageText = screen.getByText(/Welcome to HoudainBrary/i);
-    expect(homepageText).toBeInTheDocument();
+    render(<HomePage />);
+    const homePageText = screen.getByText(/Welcome to HoudainBrary/i);
+    expect(homePageText).toBeInTheDocument();
 
     await screen.findByText(/Document updated/i);
     expect(screen.getByText(/Document updated/i)).toBeInTheDocument();

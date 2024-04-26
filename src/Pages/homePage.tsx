@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { OPEN_LIBRARY_URL_PREFIX } from '../utils/utils';
-import styles from './homepage.module.css';
+import styles from './homePage.module.css';
 
 type Change = {
     timestamp: string;
@@ -11,7 +11,7 @@ type Change = {
     } | null;
 };
 
-export const Homepage = () => {
+export const HomePage = () => {
     const [recentChanges, setRecentChanges] = useState<Change[]>([]);
 
     useEffect(() => {
@@ -35,7 +35,7 @@ export const Homepage = () => {
     };
 
     return (
-        <div className={styles.homepage}>
+        <div className={styles.homePage}>
             <h1 className={styles.title}>Welcome to HoudainBrary</h1>
             <h2 className={styles.subtitle}>Recent Document Changes:</h2>
             <ul className={styles.recentChangesList}>

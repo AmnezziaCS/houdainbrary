@@ -6,15 +6,15 @@ import {
 } from 'react-router-dom';
 
 import BookDetailPage from './Pages/bookDetailsPage';
-import { Homepage } from './Pages/homepage';
+import { HomePage } from './Pages/homePage';
 import { Root } from './Pages/root';
-import { Search } from './Pages/search';
+import { SearchPage } from './Pages/searchPage';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route element={<Root />}>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/search" element={<Search />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/search" element={<SearchPage />} />
             <Route path="/books/:bookId" element={<BookDetailPage />} />
         </Route>,
     ),
