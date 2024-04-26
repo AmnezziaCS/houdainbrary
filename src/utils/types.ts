@@ -11,6 +11,13 @@ export type BookDetails = {
     publish_place: string[];
 };
 
+export type WikipediaBookInfo = {
+    description: string;
+    bookCountry: string | null;
+    coverUrl: string;
+    pageLink: string;
+};
+
 export type ShowSearchResultsObj = {
     isQuerying: boolean;
     isLoading: boolean;
