@@ -7,6 +7,7 @@ import {
 
 import { BookDetailsPage } from './pages/bookDetailsPage';
 import { HomePage } from './pages/homePage';
+import { NotFoundPage } from './pages/notFoundPage';
 import { Root } from './pages/root';
 import { SearchPage } from './pages/searchPage';
 import { SecretPage } from './pages/secretPage';
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
             <Route path="/search" element={<SearchPage />} />
             <Route path="/secret" element={<SecretPage />} />
             <Route path="/books/:bookId" element={<BookDetailsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
         </Route>,
     ),
 );
