@@ -22,3 +22,11 @@ export type ShowSearchResultsObj = {
     isQuerying: boolean;
     isLoading: boolean;
 };
+
+export type Change = {
+    timestamp: string;
+    comment: string;
+    author: {
+        key: string;
+    } | null;
+};

@@ -1,15 +1,8 @@
 import { useEffect, useState } from 'react';
 
+import { Change } from '../utils/types';
 import { OPEN_LIBRARY_URL_PREFIX } from '../utils/utils';
 import styles from './homePage.module.css';
-
-type Change = {
-    timestamp: string;
-    comment: string;
-    author: {
-        key: string;
-    } | null;
-};
 
 export const HomePage = () => {
     const [recentChanges, setRecentChanges] = useState<Change[]>([]);
