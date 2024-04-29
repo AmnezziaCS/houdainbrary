@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import { Header } from './header';
 
 test('should render header with navigation links', () => {
     render(
-        <BrowserRouter>
+        <Router>
             <Header
                 showSearchResults={{
                     isQuerying: false,
@@ -13,7 +13,7 @@ test('should render header with navigation links', () => {
                 }}
                 setShowSearchResults={() => {}}
             />
-        </BrowserRouter>,
+        </Router>,
     );
 
     const logoElement = screen.getByText(/HoudainBrary/i);

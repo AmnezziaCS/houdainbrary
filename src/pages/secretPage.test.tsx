@@ -3,11 +3,11 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { SecretPage } from './secretPage';
 
 describe('SecretPage Component', () => {
-    test('renders without crashing', () => {
+    test('should render without crashing', () => {
         render(<SecretPage />);
     });
 
-    test('initially renders with no secret content', () => {
+    test('should initially render with no secret content', () => {
         render(<SecretPage />);
         expect(screen.getByText('Secret Page')).toBeInTheDocument();
         expect(
@@ -16,7 +16,7 @@ describe('SecretPage Component', () => {
         expect(screen.getByText('... ?')).toBeInTheDocument();
     });
 
-    test('renders secret content after clicking the button', () => {
+    test('should render secret content after clicking the button', () => {
         render(<SecretPage />);
         const button = screen.getByText('... ?');
         fireEvent.click(button);

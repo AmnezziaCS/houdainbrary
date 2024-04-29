@@ -21,7 +21,7 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test --detectOpenHandles --watchAll=false",
+        "test": "react-scripts test --watchAll=false",
         "format": "prettier --write **/*.{ts,tsx,css,scss}",
         "prepare": "husky",
         "pre-commit": "npm run test && npm run format"
