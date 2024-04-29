@@ -57,12 +57,6 @@ export const SearchPage = () => {
         };
         const queryString = new URLSearchParams(queryParameters).toString();
 
-        window.history.replaceState(
-            null,
-            '',
-            `${window.location.pathname}?${queryString}`,
-        );
-
         fetch(`${OPEN_LIBRARY_URL_PREFIX}/search.json?${queryString}`)
             .then((response) => response.json())
             .then((data) => {
