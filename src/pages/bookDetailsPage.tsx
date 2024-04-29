@@ -111,15 +111,18 @@ export const BookDetailsPage = () => {
                     alt="Book Cover"
                 />
 
+                {wikipediaInfo.bookCountry ? (
+                    <p>First publish location: {wikipediaInfo.bookCountry}</p>
+                ) : (
+                    <p>
+                        Editions locations:{' '}
+                        {bookDetails?.publish_place.join(' ') ?? 'Unknown'}
+                    </p>
+                )}
                 <p>
-                    Location:{' '}
-                    {wikipediaInfo.bookCountry
-                        ? wikipediaInfo.bookCountry
-                        : bookDetails?.publish_place
-                          ? bookDetails?.publish_place[0]
-                          : 'Unknown'}
+                    First publish year date:{' '}
+                    {bookDetails?.first_publish_year ?? 'Unknown'}
                 </p>
-                <p>Date: {bookDetails?.first_publish_year ?? 'Unknown'}</p>
                 <p>Author: {bookDetails.author_name ?? 'Unknown'}</p>
                 <div className={styles.wikipediaInfo}>
                     <h3>Wikipedia Information</h3>
