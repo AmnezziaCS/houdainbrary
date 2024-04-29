@@ -116,7 +116,7 @@ export const BookDetailsPage = () => {
                 ) : (
                     <p>
                         Editions locations:{' '}
-                        {bookDetails?.publish_place.join(' ') ?? 'Unknown'}
+                        {bookDetails?.publish_place.join(' | ') ?? 'Unknown'}
                     </p>
                 )}
                 <p>
