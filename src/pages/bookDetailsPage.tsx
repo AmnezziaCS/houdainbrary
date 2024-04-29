@@ -103,9 +103,14 @@ export const BookDetailsPage = () => {
             <div className={styles?.bookDetailPage}>
                 <h2>{bookDetails?.title}</h2>
                 <img
-                    src={`${OPEN_LIBRARY_COVER_URL_PREFIX}/b/id/${bookDetails?.cover_i}-M.jpg`}
+                    src={
+                        bookDetails?.cover_i
+                            ? `${OPEN_LIBRARY_COVER_URL_PREFIX}/b/id/${bookDetails.cover_i}-M.jpg`
+                            : `${process.env.PUBLIC_URL}/images/bookNotFound.jpg`
+                    }
                     alt="Book Cover"
                 />
+
                 <p>
                     Location:{' '}
                     {wikipediaInfo.bookCountry
