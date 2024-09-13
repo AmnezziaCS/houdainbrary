@@ -7,7 +7,7 @@ A simple web application to search for books using [openlibrary.org API.](https:
 Firstly, you need to clone the repository and install the dependencies.
 
 ```bash
-git clone
+git clone https://github.com/AmnezziaCS/houdainbrary.git
 cd houdainbrary
 npm install
 ```
